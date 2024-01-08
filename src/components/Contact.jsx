@@ -5,6 +5,7 @@ import { slideIn } from "../utils/motion";
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
+import { swalAlert } from "../utils/swal";
 
 // ('g3chyHIhdc9qZ1Ep5');
 
@@ -43,7 +44,7 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          alert("Message Sent!");
+          swalAlert("Your message was sent", "success");
 
           setForm({
             name: "",
@@ -53,7 +54,9 @@ const Contact = () => {
         },
         (error) => {
           setLoading(false);
-          alert("something went wrong");
+          // alert("something went wrong");
+          const errMsg = Object.values(err.response.data.validations)[0];
+          swalAlert(errMsg, "error");
         }
       );
   };
@@ -75,6 +78,7 @@ const Contact = () => {
             <input
               type="text"
               name="name"
+              required
               value={form.name}
               onChange={handleChange}
               placeholder="What's your name?"
@@ -86,6 +90,7 @@ const Contact = () => {
             <input
               type="email"
               name="email"
+              required
               value={form.email}
               onChange={handleChange}
               placeholder="What's your email?"
@@ -97,6 +102,7 @@ const Contact = () => {
             <textarea
               rows={7}
               name="message"
+              required
               value={form.message}
               onChange={handleChange}
               placeholder="What do you want to say?"
