@@ -22,7 +22,7 @@ const ProjectCard = ({image, name, description, index, tags, source_code_link}) 
         }}
         className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
       >
-        <div className='relative w-full h-[230px]'>
+        <div  onClick={()=> window.open(source_code_link)} className='relative w-full h-[230px]'>
           <img src={image} alt={name} 
           className='w-full h-full object-cover rounded-2xl'/>
           <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
@@ -76,7 +76,7 @@ const Works = () => {
         <motion.p 
         variants={fadeIn("","",0.1, 1)}
         className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Et maxime aperiam illo consequuntur quae! Explicabo quia quas odio error maxime, eveniet ab amet quaerat quibusdam eos soluta id, praesentium rem sapiente. Odio officia eum eligendi consectetur maiores! Ut nesciunt dolorum, praesentium sed facilis explicabo ullam odio repudiandae, qui enim doloremque.
+         Explore a curated collection of impactful projects showcasing my expertise in conceptualizing, developing, and implementing innovative solutions in computer science and engineering domains. Each project reflects my commitment to technical excellence, problem-solving skills, and collaborative teamwork.
 
         </motion.p>
       </div>
