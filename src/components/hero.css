@@ -4,7 +4,9 @@
     background-position: center;
     .name{
         font-size: .8em;
-    
+    .nabe{
+        color: #000;
+    }
 }
 }
 
